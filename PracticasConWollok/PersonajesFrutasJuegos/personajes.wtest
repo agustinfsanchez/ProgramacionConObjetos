@@ -1,0 +1,42 @@
+import personajes.*
+import frutas.*
+import juegos.*
+import equipo.*
+
+test "Martin esta feliz" {
+	
+	assert.that(martin.estaFeliz())
+	
+}
+
+test "Martin hace las compras" {
+	
+	martin.hacerCompras(manzana)
+	assert.that(martin.despensa() == manzana)
+	
+}
+
+test "Martin come una manzana y queda con 107 de energia" {
+	
+	martin.comer(manzana)
+	assert.equals(107, martin.energia())
+	
+}
+
+test "Maria esta feliz" {
+	
+	assert.that(maria.estaFeliz())
+	
+}
+
+test "Pepe esta feliz" {
+	
+	assert.that(pepe.estaFeliz())
+	
+}
+
+test "Agustín esta feliz" {
+	
+	assert.notThat(agustin.estaFeliz())
+	
+}

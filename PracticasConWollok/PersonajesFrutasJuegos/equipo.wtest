@@ -1,0 +1,18 @@
+import personajes.*
+import frutas.*
+import juegos.*
+import equipo.*
+
+test "Promedio de energia del equipo" {
+	
+	equipo.asignarPersona(martin, maria, agustin)
+	assert.equals(324, equipo.promedioDeEnergiaDelEquipo())
+
+}
+
+test "El equipo no esta feliz" {
+	
+	equipo.asignarPersona(martin, maria, agustin)
+	assert.notThat(equipo.elEquipoEstaFeliz())
+
+}

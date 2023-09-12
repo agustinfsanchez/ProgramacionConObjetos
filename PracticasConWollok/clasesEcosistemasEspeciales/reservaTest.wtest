@@ -1,0 +1,45 @@
+import reservaNatural.*
+import especies.*
+
+describe "Test de la reserva" {
+//probar cantidadTotalBiomasa(), habitatsDesequilibrados(), contieneEspecie(), especieEstaEnTodosLosHabitats() etc
+
+	const habitat1 = new Habitat()
+	const habitat2 = new Habitat()
+	const golondrina = new Animal(peso=15, locomocion= volar, pesoReferencia=50)
+
+	method initialize() {
+		reserva.agregarHabitat(habitat1)
+		reserva.agregarHabitat(habitat2)
+	} 
+	
+	test "cantidadTotalBiomasa" {
+		assert.equals(0, reserva.cantTotalBiomasa())
+	}
+	
+	test "habitatsDesequilibrados" {
+		assert.equals(0, reserva.habitatsSinEquilibrio())
+	}
+	
+	test "especieEstaEnTodosLosHabitats" {
+		assert.that(reserva.estaEnTodosLosHabitats(golondrina))
+	}
+}
+
+describe "Test de habitats" {
+//probar totalBiomasa(), producirIncendio(),
+	
+	/*
+	method initialize() {
+
+	} 
+	*/
+	test "totalBiomasa" {
+
+	}
+	
+	test "producirIncendio" {
+
+	}
+
+}

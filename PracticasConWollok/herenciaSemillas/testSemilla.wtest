@@ -1,0 +1,48 @@
+import Parcela.*
+import semilla.*
+
+describe "test de semillas"{
+	
+	const menta = new Menta(anioDeObtencion=2000,altura=0.5)
+	const soja = new Soja(anioDeObtencion=2005,altura=0.7)
+	const quinoa = new Quinoa(anioDeObtencion=1990,altura=1.5,horasDeSolQueTolera=11)
+	const sojaTransgenica = new SojaTransgenica(anioDeObtencion=2008,altura=1.5)
+	const hierbabuena = new Hierbabuena(anioDeObtencion=1920,altura=0.5)
+	
+	const parcelaEcologica = new ParcelaEcologica(ancho=10,largo=10,horasDeSol=5)
+	const parcelaIndustrial = new ParcelaIndustrial(ancho=15,largo=15,horasDeSol=7)
+	
+	method initialize(){
+		parcelaEcologica.plantar(menta)
+		parcelaEcologica.plantar(soja)
+		parcelaEcologica.plantar(quinoa)
+		parcelaEcologica.plantar(sojaTransgenica)
+		parcelaEcologica.plantar(hierbabuena)
+		parcelaIndustrial.plantar(menta)
+	}
+	
+	test "testeamos si la planta menta es fuerte"{
+		assert.notThat(menta.esFuerte())
+	}
+	test "testeamos si la planta quinoa es fuerte"{
+		assert.that(quinoa.esFuerte())
+	}
+	test "testeamos si la menta da nuevas semillas"{
+		assert.that(menta.daNuevasSemillas())
+	}
+	test "testeamos el espacio que ocupa la planta hierbabuena"{
+		assert.equals(hierbabuena.espacioQueOcupa(),3)
+	}
+	test "testeamos si la parcela ecologica es ideal para la menta"{
+		assert.that(menta.esParcelaIdeal(parcelaEcologica))
+	}
+	test "testeamos si la parcela industrial es ideal para la soja"{
+		assert.that(soja.esParcelaIdeal(parcelaIndustrial))
+	}
+	test "testeamos si la parcela ecologica es ideal para la quinoa"{
+		assert.that(quinoa.esParcelaIdeal(parcelaEcologica))
+	}
+	test "testeamos si la parcela industrial es ideal para la soja transgenica"{
+		assert.that(sojaTransgenica.esParcelaIdeal(parcelaIndustrial))
+	}
+}

@@ -1,0 +1,10 @@
+import personajes.*
+import frutas.*
+import juegos.*
+import equipo.*
+
+test "testX" {
+
+	assert.that(true)
+
+}

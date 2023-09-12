@@ -1,0 +1,149 @@
+import especies.*
+
+describe "Tests de animales" {
+//probar los métodos biomasa(), peso(), consecuenciasDelIncendio, esGrande(),
+//esPequenio(), esMediano(), estaVivo(), etc
+	
+	const golondrina = new Animal(peso=15, locomocion = volar, pesoReferencia = 50)
+	const delfin = new Animal(peso=80, locomocion = nadar, pesoReferencia = 50)
+	const hormiga = new Animal(peso=5, locomocion = correr, pesoReferencia = 50)
+	const mejillon = new Animal(peso=10, locomocion = quedarseQuieto, pesoReferencia = 50) 
+	
+	// Biomasas de los animales
+	
+	test "Biomasa de la golondrina" {
+		assert.equals(4.5, golondrina.biomasa())
+	}
+	
+	test "Biomasa de la delfin" {
+		assert.equals(128, delfin.biomasa())
+	}
+	
+	test "Biomasa de la hormiga" {
+		assert.equals(0.5, hormiga.biomasa())
+	}
+	
+	test "Biomasa de la mejillon" {
+		assert.equals(2, mejillon.biomasa())
+	}
+	
+	// Pesos de los animales
+	
+	test "Peso de la golondrina" {
+		assert.equals(15, golondrina.peso())
+	}
+	
+	test "Peso de la delfin" {
+		assert.equals(80, delfin.peso())
+	}
+	
+	test "Peso de la hormiga" {
+		assert.equals(5, hormiga.peso())
+	}
+	
+	test "Peso de la mejillon" {
+		assert.equals(10, mejillon.peso())
+	}
+	
+	// Tamaño grande de los animales
+	
+	test "golondrina no es grande" {
+		assert.notThat(golondrina.esGrande())
+	}
+	
+	test "delfin es grande" {
+		assert.notThat(delfin.esGrande())
+	}
+	
+	test "hormiga no es grande" {
+		assert.notThat(hormiga.esGrande())
+	}
+	
+	test "mejillon no es grande" {
+		assert.notThat(mejillon.esGrande())
+	}
+	
+	// Tamaño pequeño de los animales
+	
+	test "golondrina es pequeño" {
+		assert.that(golondrina.esPequenio())
+	}
+	
+	test "delfin no es pequeño" {
+		assert.notThat(delfin.esPequenio())
+	}
+	
+	test "hormiga es pequeño" {
+		assert.that(hormiga.esPequenio())
+	}
+	
+	test "mejillon es pequeño" {
+		assert.that(mejillon.esPequenio())
+	}
+	
+	// Tamaño mediano de los animales
+	
+	test "golondrina no es mediano" {
+		assert.notThat(golondrina.esMediano())
+	}
+	
+	test "delfin es mediano" {
+		assert.that(delfin.esMediano())
+	}
+	
+	test "hormiga no es mediano" {
+		assert.notThat(hormiga.esMediano())
+	}
+	
+	test "mejillon no es mediano" {
+		assert.notThat(mejillon.esMediano())
+	}
+}
+
+describe "Tests de plantas" {
+//probar los métodos biomasa(), altura(), consecuenciasDelIncendio, esGrande(),
+//esPequenio(), estaVivo() etc
+
+	const arbol = new Planta(altura=10, alturaReferencia=10)
+	const arbusto = new Planta(altura=5, alturaReferencia=10)
+	
+	// Biomasa de las plantas
+	
+	test "Biomasa del arbol" {
+		assert.equals(0, arbol.biomasa())
+	}
+	
+	test "Biomasa del arbusto" {
+		assert.equals(0, arbusto.biomasa())
+	}
+	
+	// Altura de las plantas
+	
+	test "Altura del arbol" {
+		assert.equals(0, arbol.altura())
+	}
+
+	test "Altura del arbusto" {
+		assert.equals(0, arbusto.altura())
+	}
+	
+	// Tamaño grande de las plantas
+	
+	test "Tamaño grande del arbol" {
+		assert.that(arbol.esGrande())
+	}
+
+	test "Tamaño grande del arbusto" {
+		assert.notThat(arbusto.esGrande())
+	}
+	
+	// Tamaño pequeño de las plantas
+	
+	test "Tamaño pequeño del arbol" {
+		assert.notThat(arbol.esPequenio())
+	}
+
+	test "Tamaño pequeño del arbusto" {
+		assert.that(arbusto.esPequenio())
+	}
+}

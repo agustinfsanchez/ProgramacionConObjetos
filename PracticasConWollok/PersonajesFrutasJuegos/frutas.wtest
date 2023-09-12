@@ -1,0 +1,22 @@
+import personajes.*
+import frutas.*
+import juegos.*
+import equipo.*
+
+test "La energia que proporciona la Manzana" {
+
+	assert.equals(7, manzana.energiaQueProporciona())
+
+}
+
+test "La energia que proporciona la Mandarina" {
+
+	assert.equals(2, mandarina.energiaQueProporciona())
+
+}
+
+test "La energia que proporciona la Banana" {
+
+	assert.equals(5, banana.energiaQueProporciona())
+
+}
